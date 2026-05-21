@@ -28,9 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Install react-native-worklets
-        run: npm install react-native-worklets --legacy-peer-deps
-
       - name: Prebuild Expo project
         run: npx expo prebuild --platform android --clean
         env:
