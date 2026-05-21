@@ -33,6 +33,11 @@ jobs:
         env:
           CI: true
 
+      - name: Fix build.gradle compatibility issue
+        run: |
+          # Remove enableBundleCompression which is not supported in older RN
+          sed -i '/enableBundleCompression/d' android/app/build.gradle
+
       - name: Generate signing key
         run: |
           cd android/app
